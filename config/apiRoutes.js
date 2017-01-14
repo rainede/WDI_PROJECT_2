@@ -4,6 +4,8 @@ const router   = express.Router();
 const authentications = require('../controllers/authentications');
 const users           = require('../controllers/users');
 
+module.exports = router;
+
 router.route('/register')
   .post(authentications.register);
 router.route('/login')
@@ -15,5 +17,3 @@ router.route('/users/:id')
   .get(users.show)
   .put(users.update)
   .delete(users.delete);
-
-module.exports = router;
