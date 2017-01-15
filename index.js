@@ -31,8 +31,7 @@ app.use('/api', expressJWT({ secret: config.secret })
     { url: '/api/login',    methods: ['POST'] }
   ]
 }));
-app.use('/api',apiRouter);
-app.use('/', webRouter);
+
 app.use(jwtErrorHandler);
 
 function jwtErrorHandler(err, req, res, next){
@@ -41,6 +40,9 @@ function jwtErrorHandler(err, req, res, next){
 
   return res.status(401).json({ message: 'Unauthorized request.' });
 }
+
+app.use('/api',apiRouter);
+app.use('/', webRouter);
 
 const server= app.listen(config.port, () => console.log(`Express started on port: ${config.port}`));
 

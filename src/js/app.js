@@ -1,12 +1,13 @@
 const App = App || {};
+const apiUrl = 'http://localhost:3000/api';
 
 App.init = function() {
-  this.apiUrl = 'http://localhost:3000/api';
+  this.apiUrl = apiUrl;
   this.$main  = $('main');
   $('.register').on('click', this.register.bind(this));
   $('.login').on('click', this.login.bind(this));
   $('.logout').on('click', this.logout.bind(this));
-  $('.usersIndex').on('click', this.usersIndex.bind(this));
+  $('.journeysIndex').on('click', this.journeysIndex.bind(this));
   //$('.usersIndex').on('click', this.usersIndex.bind(this));
   this.$main.on('submit', 'form', this.handleForm);
 
@@ -72,6 +73,34 @@ App.logout = function(e){
   this.removeToken();
   this.loggedOutState();
 };
+
+App.journeysIndex = function(e) {
+  if (e) e.preventDefault();
+  const url = `${this.apiUrl}/users`;
+
+  return this.ajaxRequest(url, 'get', null, data => {
+    this.$main.html(`
+      <div class="card-deck-wrapper">
+        <div class="card-deck">
+        </div>
+      </div>
+    `);
+    const $container = this.$main.find('.card-deck');
+    $.each(data.users, (i, user) => {
+      $container.append(`
+        <div class="card col-md-4">
+         <img class="card-img-top" src="http://fillmurray.com/300/300" alt="Card image cap">
+         <div class="card-block">
+           <h4 class="card-title">${user.username}</h4>
+           <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+           <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+         </div>
+       </div>`);
+    });
+  });
+};
+
+
 
 App.usersIndex = function(e) {
   if (e) e.preventDefault();
