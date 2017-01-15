@@ -1,4 +1,3 @@
-//npm i --save-dev gulp gulp-babel gulp-sass gulp-nodemon gulp-clean-css gulp-uglify gulp-imagemin browser-sync 
 const gulp        = require('gulp');
 const babel       = require('gulp-babel');
 const sass        = require('gulp-sass');

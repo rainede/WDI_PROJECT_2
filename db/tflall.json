@@ -1,0 +1,465 @@
+[
+  {
+    "id": "string",
+    "name": "string",
+    "modeName": "string",
+    "disruptions": [
+      {
+        "category": "Undefined",
+        "type": "string",
+        "categoryDescription": "string",
+        "description": "string",
+        "additionalInfo": "string",
+        "created": "2017-01-15T05:23:06.016Z",
+        "lastUpdate": "2017-01-15T05:23:06.016Z",
+        "affectedRoutes": [
+          {
+            "id": "string",
+            "lineId": "string",
+            "routeCode": "string",
+            "name": "string",
+            "direction": "string",
+            "lineString": "string",
+            "originationName": "string",
+            "destinationName": "string",
+            "routeSectionNaptanEntrySequence": [
+              {
+                "ordinal": 0,
+                "stopPoint": {
+                  "naptanId": "string",
+                  "platformName": "string",
+                  "indicator": "string",
+                  "stopLetter": "string",
+                  "modes": [
+                    "string"
+                  ],
+                  "icsCode": "string",
+                  "smsCode": "string",
+                  "stopType": "string",
+                  "stationNaptan": "string",
+                  "accessibilitySummary": "string",
+                  "hubNaptanCode": "string",
+                  "lines": [
+                    {
+                      "id": "string",
+                      "name": "string",
+                      "uri": "string",
+                      "fullName": "string",
+                      "type": "string"
+                    }
+                  ],
+                  "lineGroup": [
+                    {
+                      "naptanIdReference": "string",
+                      "stationAtcoCode": "string",
+                      "lineIdentifier": [
+                        "string"
+                      ]
+                    }
+                  ],
+                  "lineModeGroups": [
+                    {
+                      "modeName": "string",
+                      "lineIdentifier": [
+                        "string"
+                      ]
+                    }
+                  ],
+                  "fullName": "string",
+                  "naptanMode": "string",
+                  "status": true,
+                  "id": "string",
+                  "url": "string",
+                  "commonName": "string",
+                  "distance": 0,
+                  "placeType": "string",
+                  "additionalProperties": [
+                    {
+                      "category": "string",
+                      "key": "string",
+                      "sourceSystemKey": "string",
+                      "value": "string",
+                      "modified": "2017-01-15T05:23:06.016Z"
+                    }
+                  ],
+                  "children": [
+                    {
+                      "id": "string",
+                      "url": "string",
+                      "commonName": "string",
+                      "distance": 0,
+                      "placeType": "string",
+                      "additionalProperties": [
+                        {
+                          "category": "string",
+                          "key": "string",
+                          "sourceSystemKey": "string",
+                          "value": "string",
+                          "modified": "2017-01-15T05:23:06.016Z"
+                        }
+                      ],
+                      "children": [
+                        {}
+                      ],
+                      "childrenUrls": [
+                        "string"
+                      ],
+                      "lat": 0,
+                      "lon": 0
+                    }
+                  ],
+                  "childrenUrls": [
+                    "string"
+                  ],
+                  "lat": 0,
+                  "lon": 0
+                }
+              }
+            ]
+          }
+        ],
+        "affectedStops": [
+          {
+            "naptanId": "string",
+            "platformName": "string",
+            "indicator": "string",
+            "stopLetter": "string",
+            "modes": [
+              "string"
+            ],
+            "icsCode": "string",
+            "smsCode": "string",
+            "stopType": "string",
+            "stationNaptan": "string",
+            "accessibilitySummary": "string",
+            "hubNaptanCode": "string",
+            "lines": [
+              {
+                "id": "string",
+                "name": "string",
+                "uri": "string",
+                "fullName": "string",
+                "type": "string"
+              }
+            ],
+            "lineGroup": [
+              {
+                "naptanIdReference": "string",
+                "stationAtcoCode": "string",
+                "lineIdentifier": [
+                  "string"
+                ]
+              }
+            ],
+            "lineModeGroups": [
+              {
+                "modeName": "string",
+                "lineIdentifier": [
+                  "string"
+                ]
+              }
+            ],
+            "fullName": "string",
+            "naptanMode": "string",
+            "status": true,
+            "id": "string",
+            "url": "string",
+            "commonName": "string",
+            "distance": 0,
+            "placeType": "string",
+            "additionalProperties": [
+              {
+                "category": "string",
+                "key": "string",
+                "sourceSystemKey": "string",
+                "value": "string",
+                "modified": "2017-01-15T05:23:06.016Z"
+              }
+            ],
+            "children": [
+              {
+                "id": "string",
+                "url": "string",
+                "commonName": "string",
+                "distance": 0,
+                "placeType": "string",
+                "additionalProperties": [
+                  {
+                    "category": "string",
+                    "key": "string",
+                    "sourceSystemKey": "string",
+                    "value": "string",
+                    "modified": "2017-01-15T05:23:06.016Z"
+                  }
+                ],
+                "children": [
+                  {}
+                ],
+                "childrenUrls": [
+                  "string"
+                ],
+                "lat": 0,
+                "lon": 0
+              }
+            ],
+            "childrenUrls": [
+              "string"
+            ],
+            "lat": 0,
+            "lon": 0
+          }
+        ],
+        "isBlocking": true,
+        "isWholeLine": true,
+        "closureText": "string"
+      }
+    ],
+    "created": "2017-01-15T05:23:06.016Z",
+    "modified": "2017-01-15T05:23:06.016Z",
+    "lineStatuses": [
+      {
+        "id": 0,
+        "lineId": "string",
+        "statusSeverity": 0,
+        "statusSeverityDescription": "string",
+        "reason": "string",
+        "created": "2017-01-15T05:23:06.016Z",
+        "modified": "2017-01-15T05:23:06.016Z",
+        "validityPeriods": [
+          {
+            "fromDate": "2017-01-15T05:23:06.016Z",
+            "toDate": "2017-01-15T05:23:06.016Z",
+            "isNow": true
+          }
+        ],
+        "disruption": {
+          "category": "Undefined",
+          "type": "string",
+          "categoryDescription": "string",
+          "description": "string",
+          "additionalInfo": "string",
+          "created": "2017-01-15T05:23:06.016Z",
+          "lastUpdate": "2017-01-15T05:23:06.016Z",
+          "affectedRoutes": [
+            {
+              "id": "string",
+              "lineId": "string",
+              "routeCode": "string",
+              "name": "string",
+              "direction": "string",
+              "lineString": "string",
+              "originationName": "string",
+              "destinationName": "string",
+              "routeSectionNaptanEntrySequence": [
+                {
+                  "ordinal": 0,
+                  "stopPoint": {
+                    "naptanId": "string",
+                    "platformName": "string",
+                    "indicator": "string",
+                    "stopLetter": "string",
+                    "modes": [
+                      "string"
+                    ],
+                    "icsCode": "string",
+                    "smsCode": "string",
+                    "stopType": "string",
+                    "stationNaptan": "string",
+                    "accessibilitySummary": "string",
+                    "hubNaptanCode": "string",
+                    "lines": [
+                      {
+                        "id": "string",
+                        "name": "string",
+                        "uri": "string",
+                        "fullName": "string",
+                        "type": "string"
+                      }
+                    ],
+                    "lineGroup": [
+                      {
+                        "naptanIdReference": "string",
+                        "stationAtcoCode": "string",
+                        "lineIdentifier": [
+                          "string"
+                        ]
+                      }
+                    ],
+                    "lineModeGroups": [
+                      {
+                        "modeName": "string",
+                        "lineIdentifier": [
+                          "string"
+                        ]
+                      }
+                    ],
+                    "fullName": "string",
+                    "naptanMode": "string",
+                    "status": true,
+                    "id": "string",
+                    "url": "string",
+                    "commonName": "string",
+                    "distance": 0,
+                    "placeType": "string",
+                    "additionalProperties": [
+                      {
+                        "category": "string",
+                        "key": "string",
+                        "sourceSystemKey": "string",
+                        "value": "string",
+                        "modified": "2017-01-15T05:23:06.016Z"
+                      }
+                    ],
+                    "children": [
+                      {
+                        "id": "string",
+                        "url": "string",
+                        "commonName": "string",
+                        "distance": 0,
+                        "placeType": "string",
+                        "additionalProperties": [
+                          {
+                            "category": "string",
+                            "key": "string",
+                            "sourceSystemKey": "string",
+                            "value": "string",
+                            "modified": "2017-01-15T05:23:06.016Z"
+                          }
+                        ],
+                        "children": [
+                          {}
+                        ],
+                        "childrenUrls": [
+                          "string"
+                        ],
+                        "lat": 0,
+                        "lon": 0
+                      }
+                    ],
+                    "childrenUrls": [
+                      "string"
+                    ],
+                    "lat": 0,
+                    "lon": 0
+                  }
+                }
+              ]
+            }
+          ],
+          "affectedStops": [
+            {
+              "naptanId": "string",
+              "platformName": "string",
+              "indicator": "string",
+              "stopLetter": "string",
+              "modes": [
+                "string"
+              ],
+              "icsCode": "string",
+              "smsCode": "string",
+              "stopType": "string",
+              "stationNaptan": "string",
+              "accessibilitySummary": "string",
+              "hubNaptanCode": "string",
+              "lines": [
+                {
+                  "id": "string",
+                  "name": "string",
+                  "uri": "string",
+                  "fullName": "string",
+                  "type": "string"
+                }
+              ],
+              "lineGroup": [
+                {
+                  "naptanIdReference": "string",
+                  "stationAtcoCode": "string",
+                  "lineIdentifier": [
+                    "string"
+                  ]
+                }
+              ],
+              "lineModeGroups": [
+                {
+                  "modeName": "string",
+                  "lineIdentifier": [
+                    "string"
+                  ]
+                }
+              ],
+              "fullName": "string",
+              "naptanMode": "string",
+              "status": true,
+              "id": "string",
+              "url": "string",
+              "commonName": "string",
+              "distance": 0,
+              "placeType": "string",
+              "additionalProperties": [
+                {
+                  "category": "string",
+                  "key": "string",
+                  "sourceSystemKey": "string",
+                  "value": "string",
+                  "modified": "2017-01-15T05:23:06.016Z"
+                }
+              ],
+              "children": [
+                {
+                  "id": "string",
+                  "url": "string",
+                  "commonName": "string",
+                  "distance": 0,
+                  "placeType": "string",
+                  "additionalProperties": [
+                    {
+                      "category": "string",
+                      "key": "string",
+                      "sourceSystemKey": "string",
+                      "value": "string",
+                      "modified": "2017-01-15T05:23:06.016Z"
+                    }
+                  ],
+                  "children": [
+                    {}
+                  ],
+                  "childrenUrls": [
+                    "string"
+                  ],
+                  "lat": 0,
+                  "lon": 0
+                }
+              ],
+              "childrenUrls": [
+                "string"
+              ],
+              "lat": 0,
+              "lon": 0
+            }
+          ],
+          "isBlocking": true,
+          "isWholeLine": true,
+          "closureText": "string"
+        }
+      }
+    ],
+    "routeSections": [
+      {
+        "routeCode": "string",
+        "name": "string",
+        "direction": "string",
+        "originationName": "string",
+        "destinationName": "string",
+        "originator": "string",
+        "destination": "string",
+        "serviceType": "string"
+      }
+    ],
+    "serviceTypes": [
+      {
+        "name": "string",
+        "uri": "string"
+      }
+    ]
+  }
+]

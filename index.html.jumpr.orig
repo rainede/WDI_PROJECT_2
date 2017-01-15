@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <meta content="yes" name="apple-mobile-web-app-capable"/>
+        <meta content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=0" name="viewport"/>
+
+        <meta content="IE=Edge" http-equiv="X-UA-Compatible"/>
+        <title>HC | Plan a healthier commute</title>
+        <link rel="stylesheet" href="/css/style.css">
+    </head>
+    <body class="trips trips-index home">
+        <div id="how_it_works">
+            <div class="container">
+                <h2>Plan my journey</h2>
+                <ul class="tabs">
+                    <li class="tab">
+                        <button class="active" data-tab-section="for_passengers">For Passengers</button>
+                    </li>
+                    <li class="tab">
+                        <button data-tab-section="for_drivers">For Service Providers</button>
+                    </li>
+                </ul>
+                <div class="active" id="for_passengers">
+                    <div class="step">
+                        <img src="https://unsplash.com/search/walking?photo=HsdiMBETJuY" alt="Binoculars icon"/>
+                        <h4>Discover</h4>
+                        <p>Search driver listings leaving from your city and get where you need to go.</p>
+                    </div>
+                    <div class="step">
+                        <img src="https://dcrft8y8615e6.cloudfront.net/assets/calendar-icon-c0ab1b5c4f18cb04e0d90804477cea002260e77ab98e55766672dff931e37685.png" alt="Calendar icon"/>
+                        <h4>Book it</h4>
+                        <p>Connect with drivers, confirm arrangements, and pay – all through Jumpr’s secure services.</p>
+                    </div>
+                    <div class="step">
+                        <img src="https://dcrft8y8615e6.cloudfront.net/assets/car-icon-672ac5eba7a39fe922ad9a0c39e58b65ff08f44ca6125c3a7ca6b02dfad53c97.png" alt="Car icon"/>
+                        <h4>Go Somewhere</h4>
+                        <p>Enjoy the trip, make some new friends, and safely arrive at your destination.</p>
+                    </div>
+                </div>
+                <div id="for_drivers">
+                    <div class="step">
+                        <img src="https://dcrft8y8615e6.cloudfront.net/assets/laptop-icon-96f04c991819410ae7ae49356a211d0ec6967f1f8b0b904b1c705cb037a325ed.png" alt="Laptop icon"/>
+                        <h4>Post Your Trip</h4>
+                        <p>Plan your trip, name a price, and list it for riders in your city to discover.</p>
+                    </div>
+                    <div class="step">
+                        <img src="https://dcrft8y8615e6.cloudfront.net/assets/handshake-icon-31021deb195b747746306f1247a6fa4a03e8ce98ee250d071e1a4f567b02d479.png" alt="Handshake icon"/>
+                        <h4>Book Passengers</h4>
+                        <p>Approve or deny potential passengers based upon their ratings or travel accommodations</p>
+                    </div>
+                    <div class="step">
+                        <img src="https://dcrft8y8615e6.cloudfront.net/assets/card-icon-8a10ac9f2bdf6e4f65fb3704b0fabb44396e4eec3240efafb11736213d23eba6.png" alt="Card icon"/>
+                        <h4>Get there, Cheaper</h4>
+                        <p>Go where you need to go for cheaper and get great company along the way.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <header class="transparent">
+            <div class="hamburger">
+                <button class="js-menu-trigger sliding-panel-button" type="button">
+                    <i class="mdi mdi-menu"></i>
+                </button>
+                <div class="js-menu sliding-panel-content">
+                    <ul>
+                        <li>
+                            <a href="/">Home</a>
+                        </li>
+                        <li>
+                            <a class="post-a-trip" href="/trips/new">Post a Trip</a>
+                        </li>
+                        <li>
+                            <a class="show_how_it_works" data-no-turbolink="true" href="#">How It Works</a>
+                        </li>
+                        <li>
+                            <a href="/sessions/new">Login</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="js-menu-screen sliding-panel-fade-screen"></div>
+            </div>
+            <div class="logo">
+                <a href="/">
+                  <img alt="Healthy Commute" src="/images/favicon.ico"/>
+                    <!-- <img alt="HealthyC" src="https://dcrft8y8615e6.cloudfront.net/assets/logo_white-ed68bcc4e247d1fe40985da66248a1942afaa29f7a1b0234420ff726bd46777c.png"/> -->
+                </a>
+            </div>
+            <ul id="navigation">
+                <li>
+                    <a class="post-a-trip" href="/trips/new">Post a Trip</a>
+                </li>
+                <li>
+                    <a class="show_how_it_works" data-no-turbolink="true" href="#">How It Works</a>
+                </li>
+                <li>
+                    <a href="#" class=".login">Login</a>
+                </li>
+            </ul>
+        </header>
+        <!-- <div class="desktop-hero lazyload bg17" data-bgset="https://dcrft8y8615e6.cloudfront.net/assets/header_backgrounds/17_background_small-d29bb3f60ff13593d24af51fd3105b18486c76280979aaabcb5b698df4ac16f4.png [--small] | https://dcrft8y8615e6.cloudfront.net/assets/header_backgrounds/17_background_medium-65deddaf0b16f448b34176b1b9914f263c5325e48b0382702cd8217fb317e5e8.png [--medium] | https://dcrft8y8615e6.cloudfront.net/assets/header_backgrounds/17_background_large-77997d13712ccdf9d9ed04286075c3436a047f8262c67c8627a1f8c427ff5283.png" data-sizes="auto"></div> -->
+        <div class="wrapper">
+            <aside class="home">
+                <div class="inner-wrapper">
+                    <h1>Let's plan a healthier commute</h1>
+                    <p>Search for some options on your route</p>
+                </div>
+                <button class="coral show_how_it_works" type="button">Show journey</button>
+            </aside>
+            <main class="home">
+                <div class="search-fields">
+                    <div class="inner-wrapper">
+                        <form id="index_search_form" action="/trips" accept-charset="UTF-8" method="get">
+                            <input name="utf8" type="hidden" value="&#x2713;"/>
+                            <input type="text" name="origin" id="index_origin" autocomplete="off" placeholder="Leaving from?"/>
+                            <input autocomplete="off" id="index_search" name="query" placeholder="Going to?" type="search" value=""/>
+                            <button class="desktop">Search</button>
+                            <button class="mobile">
+                                <i class="mdi mdi-magnify"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                <div class="inner-wrapper">
+                    <div class="results">
+                        <div class="driving-opens-up-new-possibilities">
+                            <div class="photo show-on-mobile"></div>
+                            <div class="details">
+                                <h2>Improve your journey</h2>
+                                <p>Do some exercise, take the scenic route or just walk one stop</p>
+                                <a href="/pages/become-a-driver">Show me how</a>
+                            </div>
+                            <div class="photo hide-on-mobile"></div>
+                        </div>
+                        <div class="discover-trips">
+                            <h2>Discover trips</h2>
+                            <p>See what other people are doing</p>
+                        </div>
+                        <div class="trips without-event">
+                            <div class="trip" data-destination-lng-lat="-96.7898034,46.8771863" data-origin-lng-lat="-93.2650108,44.977753" data-search-specific-lng-lats="-93.2650108,44.977753;-96.7898034,46.8771863" data-stopover-lng-lats="">
+                                <a href="/trips/214">
+                                    <div class="avatar">
+                                        <!-- <img src="https://scontent.xx.fbcdn.net/v/t1.0-1/p200x200/12006379_10156051293705287_4276807817757332635_n.jpg?oh=4399e5e3cac326b25df770286a1c53e5&amp;oe=5910060C" alt="12006379 10156051293705287 4276807817757332635 n"/> -->
+                                    </div>
+                                    <div class="information">
+                                        <div class="primary">
+                                            <div class="origin">
+                                                <div class="name">Minneapolis, MN to</div>
+                                            </div>
+                                            <div class="destination">Fargo, ND</div>
+                                            <div class="price">$10</div>
+                                        </div>
+                                        <div class="secondary">
+                                            <span class="date">
+                                                <i class="mdi tiny mdi-calendar"></i>
+                                                <time datetime="2017-01-15T22:00:00Z" data-local="time" data-format="%a %b %e">Sun Jan 15</time>
+                                            </span>
+                                            <span class="time">
+                                                <i class="mdi tiny mdi-clock"></i>
+                                                <time datetime="2017-01-15T22:00:00Z" data-local="time" data-format="%l:%M %P">10:00 pm</time>
+                                            </span>
+                                            <span class="seats">
+                                                <i class="mdi mdi-account-outline"></i>
+                                                <i class="mdi mdi-account-outline"></i>
+                                                <i class="mdi mdi-account-outline"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="trip" data-destination-lng-lat="-87.6244,41.8756" data-origin-lng-lat="-96.7898034,46.8771863" data-search-specific-lng-lats="-96.7898034,46.8771863;-96.4198,46.6522;-96.0776,46.283;-95.3779,45.8847;-94.1642,45.5616;-93.7941,45.3055;-93.2650108,44.977753;-93.1015,44.9504;-91.4985,44.8113;-89.7716,43.6256;-89.3838,43.0748;-87.9726,43.0125;-87.6244,41.8756" data-stopover-lng-lats="-96.4198,46.6522;-96.0776,46.283;-95.3779,45.8847;-94.1642,45.5616;-93.7941,45.3055;-93.2650108,44.977753;-93.1015,44.9504;-91.4985,44.8113;-89.7716,43.6256;-89.3838,43.0748;-87.9726,43.0125">
+                                <a href="/trips/196">
+                                    <div class="avatar">
+                                        <!-- <img src="https://scontent.xx.fbcdn.net/v/t1.0-1/p200x200/15698313_1362320943820136_3173291333911332513_n.jpg?oh=0d9998505caf98cf013bfd99c7cdc1d1&amp;oe=590D51C5" alt="15698313 1362320943820136 3173291333911332513 n"/> -->
+                                    </div>
+                                    <div class="information">
+                                        <div class="primary">
+                                            <div class="origin">
+                                                <div class="name">Fargo, ND to</div>
+                                            </div>
+                                            <div class="destination">Chicago, IL</div>
+                                            <div class="price">$75</div>
+                                        </div>
+                                        <div class="secondary">
+                                            <span class="date">
+                                                <i class="mdi tiny mdi-calendar"></i>
+                                                <time datetime="2017-01-20T23:00:00Z" data-local="time" data-format="%a %b %e">Fri Jan 20</time>
+                                            </span>
+                                            <span class="time">
+                                                <i class="mdi tiny mdi-clock"></i>
+                                                <time datetime="2017-01-20T23:00:00Z" data-local="time" data-format="%l:%M %P">11:00 pm</time>
+                                            </span>
+                                            <span class="seats">
+                                                <i class="mdi mdi-account-outline"></i>
+                                                <i class="mdi mdi-account-outline"></i>
+                                                <i class="mdi mdi-account-outline"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="trip" data-destination-lng-lat="-96.73110340000001,43.5445959" data-origin-lng-lat="-96.7898034,46.8771863" data-search-specific-lng-lats="-96.7898034,46.8771863;-96.6089,46.2659;-97.0498,45.6646;-97.1153,44.8992;-96.7984,44.3115;-96.73110340000001,43.5445959" data-stopover-lng-lats="-96.6089,46.2659;-97.0498,45.6646;-97.1153,44.8992;-96.7984,44.3115">
+                                <a href="/trips/198">
+                                    <div class="avatar">
+                                        <!-- <img src="https://scontent.xx.fbcdn.net/v/t1.0-1/p200x200/15698313_1362320943820136_3173291333911332513_n.jpg?oh=0d9998505caf98cf013bfd99c7cdc1d1&amp;oe=590D51C5" alt="15698313 1362320943820136 3173291333911332513 n"/> -->
+                                    </div>
+                                    <div class="information">
+                                        <div class="primary">
+                                            <div class="origin">
+                                                <div class="name">Fargo, ND to</div>
+                                            </div>
+                                            <div class="destination">Sioux Falls, SD</div>
+                                            <div class="price">$30</div>
+                                        </div>
+                                        <div class="secondary">
+                                            <span class="date">
+                                                <i class="mdi tiny mdi-calendar"></i>
+                                                <time datetime="2017-01-27T23:00:00Z" data-local="time" data-format="%a %b %e">Fri Jan 27</time>
+                                            </span>
+                                            <span class="time">
+                                                <i class="mdi tiny mdi-clock"></i>
+                                                <time datetime="2017-01-27T23:00:00Z" data-local="time" data-format="%l:%M %P">11:00 pm</time>
+                                            </span>
+                                            <span class="seats">
+                                                <i class="mdi mdi-account-outline"></i>
+                                                <i class="mdi mdi-account-outline"></i>
+                                                <i class="mdi mdi-account-outline"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+        <footer>
+            <div class="application-footer-container container">
+                <aside>
+                    <div class="logo">
+                        <a href="/">
+                            <img alt="HealthC" src="/images/favicon.ico"/>
+                        </a>
+                    </div>
+                    <p>Want to improve your commute?  Health Commute puts your wellbeing first and helps put you at the heart of your journey!</p>
+                </aside>
+                <div class="footer-nav">
+                    <h5>Get Started</h5>
+                    <ul>
+                      <li>
+                          <a href="/api/login">Sign In</a>
+                      </li>
+                        <li>
+                            <a class="show_how_it_works" data-no-turbolink="true" href="#">How we work</a>
+                        </li>
+                        <li>
+                            <a href="#">Blog</a>
+                        </li>
+
+                        <li>
+                            <a href="#">Privacy Policy</a>
+                        </li>
+                        <li>
+                            <a href="#">Terms and conditions</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <div class="container">
+                    © 2017 Healthy Commute <span class="message">Made with &hearts; by Rainey, London</span>
+                </div>
+            </div>
+        </footer>
+
+    </body>
+</html>
