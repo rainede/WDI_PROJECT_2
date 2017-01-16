@@ -1,13 +1,15 @@
 const App = App || {};
 const apiUrl = 'http://localhost:3000/api';
 
+$(App.init.bind(App));
+
 App.init = function() {
   this.apiUrl = apiUrl;
   this.$main  = $('main');
   $('.register').on('click', this.register.bind(this));
   $('.login').on('click', this.login.bind(this));
   $('.logout').on('click', this.logout.bind(this));
-  $('.journeysIndex').on('click', this.journeysIndex.bind(this));
+  $('.journeysNew').on('click', this.journeysNew.bind(this));
   //$('.usersIndex').on('click', this.usersIndex.bind(this));
   this.$main.on('submit', 'form', this.handleForm);
 
@@ -21,7 +23,7 @@ App.init = function() {
 App.loggedInState = function(){
   $('.loggedIn').show();
   $('.loggedOut').hide();
-  this.usersIndex();
+  this.journeysNew();
 };
 
 App.loggedOutState = function(){
@@ -74,9 +76,22 @@ App.logout = function(e){
   this.loggedOutState();
 };
 
+
+App.journeysNew= function(e) {
+  if (e) e.preventDefault();
+
+  this.$main.html(`
+
+        <div id="map"></div>
+          <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCS6aR9Ini0ffsm6TmMnX3u3GWRVTadsbI" charset="utf-8"></script>
+
+    `);
+//  });
+};
+
 App.journeysIndex = function(e) {
   if (e) e.preventDefault();
-  const url = `${this.apiUrl}/users`;
+  const url = `${this.apiUrl}/journeys`;
 
   return this.ajaxRequest(url, 'get', null, data => {
     this.$main.html(`
@@ -99,9 +114,62 @@ App.journeysIndex = function(e) {
     });
   });
 };
+const google = google;
+//start maps
+App.addInfoWindowForModel = function(camera, marker) {
+  google.maps.event.addListener(marker, 'click', () => {
+    if (typeof this.infoWindow !== 'undefined') this.infoWindow.close();
 
+    this.infoWindow = new google.maps.InfoWindow({
+      content: `<img src="http://www.tfl.gov.uk/tfl/livetravelnews/trafficcams/cctv/${ camera.file }"><p>${ camera.location }</p>`
+    });
 
+    this.infoWindow.open(this.map, marker);
+    this.map.setCenter(marker.getPosition());
+    this.map.setZoom(15);
+  });
+};
 
+App.createMarkerForModel = function(camera) {
+  const latlng = new google.maps.LatLng(camera.lat, camera.lng);
+  const marker = new google.maps.Marker({
+    position: latlng,
+    map: this.map,
+    icon: '/images/marker.png',
+    animation: google.maps.Animation.DROP
+  });
+
+  this.addInfoWindowForModel(camera, marker);
+};
+
+App.loopThroughCameras = function(data) {
+  $.each(data.cameras, (index, camera) => {
+    setTimeout(() => {
+      App.createMarkerForModel(camera);
+    }, index * 50);
+  });
+};
+
+App.getCameras = function() {
+  $.get('http://localhost:3000/cameras').done(this.loopThroughCameras);
+};
+
+App.mapSetup = function() {
+  const canvas = document.getElementById('map-canvas');
+
+  const mapOptions = {
+    zoom: 12,
+    center: new google.maps.LatLng(51.506178,-0.088369),
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+  };
+
+  this.map = new google.maps.Map(canvas, mapOptions);
+  this.getCameras();
+};
+
+//end map
+
+//Admin flag on user
 App.usersIndex = function(e) {
   if (e) e.preventDefault();
   const url = `${this.apiUrl}/users`;
@@ -169,6 +237,3 @@ App.getToken = function(){
 App.removeToken = function(){
   return window.localStorage.clear();
 };
-
-
-$(App.init.bind(App));

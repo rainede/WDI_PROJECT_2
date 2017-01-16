@@ -12,4 +12,4 @@ const tflSchema = mongoose.Schema({
   
 });
 
-module.exports = mongoose.model('Camera', cameraSchema);
+module.exports = mongoose.model('tfl-route', tflSchema);

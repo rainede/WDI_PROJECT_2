@@ -20,9 +20,11 @@ router.route('/users/:id')
   .put(users.update)
   .delete(users.delete);
 
-
 router.route('/journeys')
   .get(journeys.index);
+
+router.route('/journeys/new')
+    .get(journeys.new);
 
 router.route('/journeys/:id')
   .get(journeys.show)

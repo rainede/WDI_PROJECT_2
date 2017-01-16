@@ -7,29 +7,31 @@ const userSchema = new mongoose.Schema({
   username: { type: String, unique: true, required: true },
   email: { type: String, unique: true, required: true },
   passwordHash: { type: String, required: true },
+
+  location: {type: [Number], required: true}, // [Long, Lat] backwards order to google
+  admin: {type: Boolean, default: false},
   created: {type: Date, default: Date.now},
-  updated: {type: Date, default: Date.now},
-  location: {type: [Number], required: true} // [Long, Lat] backwards order to google
+  updated: {type: Date, default: Date.now}
 });
 
 module.exports = mongoose.model('User', userSchema);
 
 userSchema
 //virtual not saved to Database
-  .virtual('password')
-  .set(setPassword);
+.virtual('password')
+.set(setPassword);
 
 userSchema
-  .virtual('passwordConfirmation')
-  .set(setPasswordConfirmation);
+.virtual('passwordConfirmation')
+.set(setPasswordConfirmation);
 
 userSchema
-  .path('passwordHash')
-  .validate(validatePasswordHash);
+.path('passwordHash')
+.validate(validatePasswordHash);
 
 userSchema
-  .path('email')
-  .validate(validateEmail);
+.path('email')
+.validate(validateEmail);
 
 userSchema.methods.validatePassword = validatePassword;
 
@@ -80,12 +82,12 @@ function validatePassword(password){
 //https://scotch.io/tutorials/making-mean-apps-with-google-maps-part-i
 // Sets the created_at parameter equal to the current time
 userSchema.pre('save', function(next){
-    const now = new Date();
-    this.updated = now;
-    if(!this.created) {
-        this.created= now;
-    }
-    next();
+  const now = new Date();
+  this.updated = now;
+  if(!this.created) {
+    this.created= now;
+  }
+  next();
 });
 
 // Indexes this schema in 2dsphere format (critical for running proximity searches)

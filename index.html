@@ -16,6 +16,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.3.7/js/tether.min.js" charset="utf-8"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/js/bootstrap.min.js"></script>
     <script src="/js/app.js" charset="utf-8"></script>
+
   </head>
   <body>
     <header>
@@ -64,6 +65,9 @@
     </button>
     <div class="collapse navbar-toggleable-xs" id="exCollapsingNavbar2">
       <ul class="nav navbar-nav">
+        <li class="nav-item active loggedOut">
+          <a class="nav-link journeysNew" href="#">New Commute <span class="sr-only">(current)</span></a>
+        </li>
         <li class="nav-item active loggedIn">
           <a class="nav-link journeysIndex" href="#">Heathy Commutes <span class="sr-only">(current)</span></a>
         </li>
@@ -81,7 +85,9 @@
   </div>
 </nav>
     </header>
-    <main class="container"></main>
+    <main class="container"><div id="map-canvas">
+
+    </div></main>
     <footer>
       <aside>
           <div class="logo">

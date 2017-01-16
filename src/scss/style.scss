@@ -2,8 +2,30 @@
     box-sizing: border-box
 }
 
+// html {
+//   position: relative;
+//   min-height: 100%;
+// }
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+
+html {
+    box-sizing: border-box;
+      min-height: 100%;
+        position: relative;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
 //footer-nav
 .footer > .container {
+  position: absolute;
+bottom: 0;
   padding-right: 15px;
   padding-left: 15px;
 }
@@ -138,14 +160,7 @@ select {
     width: auto
 }
 
-html {
-    box-sizing: border-box
-}
 
-body {
-    margin: 0;
-    padding: 0
-}
 
 *,*::before,*::after {
     box-sizing: inherit

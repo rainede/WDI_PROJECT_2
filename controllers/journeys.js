@@ -2,6 +2,7 @@ const Journey = require('../models/journey');
 
 module.exports = {
   index: journeysIndex,
+  new: journeysNew,
   show: journeysShow,
   update: journeysUpdate,
   delete: journeysDelete
@@ -14,6 +15,9 @@ function journeysIndex(req, res) {
   });
 }
 
+function journeysNew(req, res) {
+  return res.render('journeys/new',{error: null});
+}
 function journeysShow(req, res) {
   Journey.findById(req.params.id, (err, journey) => {
     if (err) return res.status(500).json({ message: 'Something went wrong.' });
