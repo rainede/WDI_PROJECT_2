@@ -8,13 +8,11 @@ const userSchema = new mongoose.Schema({
   email: { type: String, unique: true, required: true },
   passwordHash: { type: String, required: true },
 
-  location: {type: [Number], required: true}, // [Long, Lat] backwards order to google
+  location: {type: [Number]}, // [Long, Lat] backwards order to google
   admin: {type: Boolean, default: false},
   created: {type: Date, default: Date.now},
   updated: {type: Date, default: Date.now}
 });
-
-module.exports = mongoose.model('User', userSchema);
 
 userSchema
 //virtual not saved to Database
@@ -43,6 +41,8 @@ userSchema.set('toJSON', {
     return ret;
   }
 });
+
+module.exports = mongoose.model('User', userSchema);
 
 function setPassword(value){
   this._password    = value;

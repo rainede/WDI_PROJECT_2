@@ -10,8 +10,9 @@ const app        = express();
 const config     = require('./config/config');
 const webRouter  = require('./config/webRoutes');
 const apiRouter  = require('./config/apiRoutes');
-const favicon     = require('serve-favicon');
+//const favicon     = require('serve-favicon');
 const io = require('socket.io');
+
 
 //Mongo DB connection
 mongoose.connect(config.db);
@@ -22,13 +23,15 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 app.use(express.static(`${__dirname}/public`));
-app.use(favicon(`${__dirname}/public/images/favicon.ico`));
+//app.use(favicon(`${__dirname}/public/images/favicon.ico`));
 
 app.use('/api', expressJWT({ secret: config.secret })
 .unless({
   path: [
     { url: '/api/register', methods: ['POST'] },
     { url: '/api/login',    methods: ['POST'] }
+    //temporary.. to get map working
+    // { url: '/api/journeys/new',    methods: ['POST','GET'] }
   ]
 }));
 

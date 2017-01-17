@@ -1,4 +1,5 @@
 const Journey = require('../models/journey');
+const polyline = require('polyline');
 
 module.exports = {
   index: journeysIndex,
@@ -16,7 +17,10 @@ function journeysIndex(req, res) {
 }
 
 function journeysNew(req, res) {
-  return res.render('journeys/new',{error: null});
+  console.log('journeys New');
+//  polyline.decode('}qpwFxdsbM`D|@z@wClA_EiCw@qCs@_@K}EsAaIuBoAYf@eBpF{Pv@eCaC}AkJiGuBuAyBwA~@wC')
+//polyline.decode(req.params.
+  return res.status(200).json({message: 'OK'});
 }
 function journeysShow(req, res) {
   Journey.findById(req.params.id, (err, journey) => {
