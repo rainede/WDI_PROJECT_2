@@ -7,16 +7,16 @@
 //   min-height: 100%;
 // }
 
-.map{
-    padding: 60px;
-  height: 100vh;
-  width: 100%;
-}
+// .map{
+//   padding: 60px;
+//   height: 100vh;
+//   width: 100%;
+// }
 
 body {
   /* Margin bottom by footer height */
   margin-bottom: 60px;
-  max-width: 960px;
+  // max-width: 960px;
   margin: 0;
 }
 
@@ -44,7 +44,8 @@ html, body {
 }
 #map-canvas {
   height: 90vh;
-  width: 100%;
+  float: left;
+  width: 63%;
 }
 #right-panel {
   float: right;

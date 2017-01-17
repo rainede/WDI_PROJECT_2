@@ -1,7 +1,6 @@
 const App = App || {};
 const apiUrl = 'http://localhost:3000/api';
 
-
 App.init = function() {
   this.apiUrl = apiUrl;
   this.$main  = $('main');
@@ -13,7 +12,6 @@ App.init = function() {
   //$('.usersIndex').on('click', this.usersIndex.bind(this));
   this.$modal.on('submit', 'form.auth', this.handleForm);
   this.$modal.on('submit', 'form.journeyForm', this.buildJourney);
-  this.$modal.on('change', 'form.journeyForm.start', this.autoComplete)
 
   if (this.getToken()) {
     this.loggedInState();
@@ -87,33 +85,29 @@ App.journeysNew= function(e) {
   const url = `${this.apiUrl}/journeys/new`;
   App.ajaxRequest(url, 'get', null,() => {
     App.$modal.html(`
-
-          <!--  <div id="right-panel"> -->
           <form class="journeyForm">
-          <b>Goal: </b>
-          <select id="target">
-          <option value="DEFAULT" selected="selected">Quickest</option>
-          <option value="WALK">10,000 steps</option>
-          <option value="EXERCISE">Moderate Exercise</option>
-          <option value="SCENE">Scenery</option>
-          </select>
-          <b>Mode of Travel: </b>
-          <select id="mode">
-          <option value="DRIVING">Driving</option>
-          <option value="WALKING">Walking</option>
-          <option value="BICYCLING">Bicycling</option>
-          <option value="TRANSIT" selected="selected">Public Transport</option>
-          </select>
-          <b>Arrival Time: </b>
-          <input type="time" name="due">
-          <b>Start: </b>
-          <input type="text" id="start" class="places-auto-complete">
-          <b>End: </b>
-          <input type="text" id="end" class="places-auto-complete">
-          <input type="submit" id="submit" value="Search">
-          <!--  <p>Total Distance: <span id="total"></span></p> -->
+            <b>Goal: </b>
+            <select id="target">
+              <option value="DEFAULT" selected="selected">Quickest</option>
+              <option value="WALK">10,000 steps</option>
+              <option value="EXERCISE">Moderate Exercise</option>
+              <option value="SCENE">Scenery</option>
+            </select>
+            <b>Mode of Travel: </b>
+            <select id="mode">
+              <option value="DRIVING">Driving</option>
+              <option value="WALKING">Walking</option>
+              <option value="BICYCLING">Bicycling</option>
+              <option value="TRANSIT" selected="selected">Public Transport</option>
+            </select>
+            <b>Arrival Time: </b>
+            <input type="time" name="due">
+            <b>Start: </b>
+            <input type="text" id="start">
+            <b>End: </b>
+            <input type="text" id="end">
+            <input type="submit" id="submit" value="Search">
           </form>
-          <!-- </div> -->
           `);
           return $('.modal').modal('show');
         });
@@ -130,7 +124,7 @@ this.$main.html(`
 </div>
 </div>
 `);
-const $container = this.$main.find('.container');
+const $container = this.$main.find('.card-deck');
 $.each(data.journeys, (i, journey) => {
 $container.append(`
 <div class="card col-md-4">
@@ -235,7 +229,6 @@ var leg = myroute.legs[i];
 for (var j = leg.steps.length -1; j >= 0; j--) {
   if (leg.steps[j].travel_mode === 'TRANSIT'){
     console.log(leg.steps[j]);
-    console.log(leg.steps[j].steps[leg.steps[j].length]);
     break;
   }
 }
@@ -332,20 +325,32 @@ App.removeToken = function(){
 
 App.buildJourney = function(e){
   e.preventDefault();
-  const mode = $('#mode').val();
-  const start = $('#start').val();
-  const end = $('#end').val();
-// this.$main.html(`
-//     <div id="map-canvas"></div>
-//     <div id="right-panel">
-//       <p>Total Distance: <span id="total"></span></p>
-//     </div>
-//   <div id="right-panel">
-//   <p>Total Distance: <span id="total"></span></p>
-//   </div>
-//         `);
-  initMap(mode, start, end);
   $('.modal').modal('hide');
+
+  const mode  = $('#mode').val();
+  const start = $('#start').val();
+  const end   = $('#end').val();
+
+  console.log(mode, start, end);
+
+  initMap(mode, start, end);
 };
+
+function addressAutoComplete(start, end){
+  const options = {
+      componentRestrictions: {country: 'uk'}
+  };
+  autocomplete = new google.maps.places.Autocomplete(start, options);
+  autocomplete = new google.maps.places.Autocomplete(end, options);
+    // After the user selects the address
+  // google.maps.event.addListener(autocomplete, 'place_changed', function() {
+  //       planSub.focus();
+  //       var place = autocomplete.getPlace();
+  //       planAddress.value = place.name;
+  //       planCity.value = place.address_components[2].long_name;
+  //       planCounty.value = place.address_components[3].long_name;
+  //       planZip.value = place.address_components[6].long_name;
+  //   });
+}
 
 $(App.init.bind(App));
