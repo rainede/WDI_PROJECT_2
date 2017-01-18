@@ -1,0 +1,30 @@
+<section class="one">
+  <div class="centered">
+    <h1>The Healthy Commute</h1>
+    <h2>Caption</h2>
+    <!-- <div class="row">
+      <form class="container auth" action="http://localhost:3000/api/journeys/new" method="post">
+        <div class="col-md-5">
+          <input type="text" name="" value="" placeholder="Leaving from?">
+        </div>
+        <div class="col-md-5">
+          <input type="text" name="" value="" placeholder="Going to?">
+        </div>
+        <div class="col-md-2">
+          <input type="submit" name="" value="Submit">
+        </div>
+      </form>
+    </div> -->
+  </div>
+</section>
+<section class="container">
+
+<p>Total Distance: <span id="total"></span></p>
+<p>Total Walking: <span id="total"></span></p>
+
+<section class="container">
+  <div id="map-canvas"></div>
+
+  <div id="right-panel">
+  </div>
+</section>

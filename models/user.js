@@ -6,15 +6,15 @@ const validator = require('validator');
 const userSchema = new mongoose.Schema({
   username: { type: String, unique: true, required: true },
   email: { type: String, unique: true, required: true },
-  passwordHash: { type: String, required: true },
-  gender: {type: String, enum: ['male', 'female' ,'other']},
-  age: {type: Number, required: true},
-  walkingSpeed: {type: String, enum: ['slow', 'medium' ,'fast']},
-  location: {type: [Number]}, // [Long, Lat] backwards order to google
-  admin: {type: Boolean, default: false}},
-  {
-    timestamps: true
-  });
+  passwordHash: { type: String, required: true }
+  // gender: {type: String, enum: ['male', 'female' ,'other']},
+  // age: {type: Number},
+  // walkingSpeed: {type: String, enum: ['slow', 'medium' ,'fast']},
+  // location: {type: [Number]}, // [Long, Lat] backwards order to google
+  // admin: {type: Boolean, default: false}},
+}, {
+  timestamps: true
+});
 
 userSchema
 //virtual not saved to Database
