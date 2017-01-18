@@ -12,7 +12,7 @@ const userSchema = new mongoose.Schema({
   walkingSpeed: {type: String, enum: ['slow', 'medium' ,'fast']},
   location: {type: [Number]}, // [Long, Lat] backwards order to google
   admin: {type: Boolean, default: false}},
-    {
+  {
     timestamps: true
   });
 

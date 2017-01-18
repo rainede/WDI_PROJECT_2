@@ -36,7 +36,7 @@ App.loggedInState = function(){
 App.loggedOutState = function(){
   $('.loggedIn').hide();
   $('.loggedOut').show();
-    $('.modal').modal('hide');
+  $('.modal').modal('hide');
   this.login();
 };
 
