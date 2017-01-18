@@ -36,6 +36,7 @@ App.loggedInState = function(){
 App.loggedOutState = function(){
   $('.loggedIn').hide();
   $('.loggedOut').show();
+    $('.modal').modal('hide');
   this.login();
 };
 
@@ -91,7 +92,7 @@ App.logout = function(e){
 App.buildJourney= function(e) {
   if (e) e.preventDefault();
 
-  $('.modal').modal('hide');
+//  $('.modal').modal('hide');
 
   const mode  = $('#mode');
   const start = $('#start');
