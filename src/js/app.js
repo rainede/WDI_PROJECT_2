@@ -26,6 +26,7 @@ App.init = function() {
   }
 };
 
+
 App.loggedInState = function(){
   $('.loggedIn').show();
   $('.loggedOut').hide();
