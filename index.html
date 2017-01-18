@@ -17,7 +17,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/js/bootstrap.min.js"></script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCS6aR9Ini0ffsm6TmMnX3u3GWRVTadsbI&libraries=places" charset="utf-8"></script>
   <script src="/js/app.js" charset="utf-8"></script>
-<link rel="/images/favicon.ico" href="image/x-icon">
+  <link rel="/images/favicon.ico" href="image/x-icon">
 </head>
 <body>
   <header>
@@ -47,19 +47,35 @@
       </div>
     </nav>
   </header>
-  <main class="container">
-    <div id="map-canvas"></div>
-    <div id="right-panel">
-      <p>Total Distance: <span id="total"></span></p>
+  <section class="one">
+    <div class="centered">
+      <h1>The Healthy Commute</h1>
+      <h2>Improving your journey with extra walking!</h2>
+    <div class="row">
+        <form class="container auth" action="http://localhost:3000/api/journeys/new" method="post">
+          <div class="col-md-5">
+            <input type="text" name="" value="" placeholder="Leaving from?">
+          </div>
+          <div class="col-md-5">
+            <input type="text" name="" value="" placeholder="Going to?">
+          </div>
+          <div class="col-md-2">
+            <input type="submit" name="" value="Submit">
+          </div>
+        </form>
+      </div>
     </div>
-  </main>
-
+    <div id="map-canvas"></div>
+    <div id="right-panel"></div>
+  </section>
+  <section class="modal">
   <div class="modal fade" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
       </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
   </div>
+</section>
   <footer>
     <aside>
       <div class="logo">
@@ -69,9 +85,11 @@
       </div>
       <p>Want to improve your commute?  Health Commute puts your wellbeing first and helps put you at the heart of your journey!</p>
     </aside>
+    <div class="copyright">
     <div class="container">
       © 2017 Healthy Commute <span class="message">Made with &hearts; by Rainey, London</span>
     </div>
+  </div>
   </footer>
 </body>
 </html>
