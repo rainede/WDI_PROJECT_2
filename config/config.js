@@ -2,7 +2,7 @@
 //
 module.exports = {
   port: process.env.PORT || 3000,
-  db: process.env.MONGODB_URI||  'mongodb://localhost/WDI_PROJECT_2',
+  db: process.env.MONGODB_URI||  'mongodb://localhost/WDI_PROJECT_2R',
   secret: process.env.SECRET || 'gosh this is so secret... shhh...',
   apiUrl: 'http://localhost:3000/api',
   //tflCameras: 'https://s3-eu-west-1.amazonaws.com/tfl.pub/Jamcams/jamcams-camera-list.xml'

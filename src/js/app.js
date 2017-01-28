@@ -28,9 +28,10 @@ App.loggedInState = function(){
   $('.loggedIn').show();
   $('.loggedOut').hide();
   $('.modal').modal('hide');
-  $('body').css('background', 'none');
-  $('.centered').hide();
-  this.journeysNew();
+  //$('body').css('background', 'none');
+  //$('.centered').hide();
+//  this.journeysNew();
+  //this.logout();
 };
 
 App.loggedOutState = function(){
@@ -61,6 +62,12 @@ App.register = function(e){
     <div class="form-group">
     <input class="form-control" type="password" name="user[passwordConfirmation]" placeholder="Password Confirmation">
     </div>
+    <div class="form-group">
+    <input class="form-control" type="location" name="user[location]" placeholder="What's your default location?">
+    </div>
+    <div class="form-group">
+    <input class="form-control" type="checkbox" name="user[admin]" placeholder="Administrator">
+    </div>
     <input class="btn btn-primary" type="submit" value="Register">
     </form>
     `);
@@ -87,7 +94,7 @@ App.register = function(e){
 
     App.logout = function(e){
       e.preventDefault();
-      $('.modal-content').one('submit', '.auth', this.handleForm);
+    //  $('.modal-content').one('submit', '.auth', this.handleForm);
       this.removeToken();
       // $('.modal-backdrop').modal('hide');
       this.loggedOutState();
@@ -95,7 +102,7 @@ App.register = function(e){
 
     App.buildJourney= function(e)  {
       if (e) e.preventDefault();
-
+        $('body').css('background', 'none');
 
       const mode  = $('#mode').val();
       const start = $('#start').val() + ', UK';
@@ -112,6 +119,7 @@ App.register = function(e){
     };
 
     function initMap2(start, mode, end) {
+      let  infowindow='';
       document.getElementById('right-panel').innerHTML = '';
       // $('.modal-backdrop').modal('hide');
       $('.modal').modal('hide');
@@ -129,12 +137,34 @@ App.register = function(e){
         panel: document.getElementById('right-panel')
       });
 
+      infowindow = new google.maps.InfoWindow();
+      // Try HTML5 geolocation.
+      if (navigator.geolocation) {
+        console.log('yay');
+        navigator.geolocation.getCurrentPosition(function(position) {
+          var pos = {
+            lat: position.coords.latitude,
+            lng: position.coords.longitude
+          };
+
+          infoWindow.setPosition(pos);
+          infoWindow.setContent('Location found.');
+          map.setCenter(pos);
+        }, function() {
+          handleLocationError(true, infoWindow, map.getCenter());
+        });
+      } else {
+        // Browser doesn't support Geolocation
+        handleLocationError(false, infoWindow, map.getCenter());
+      }
+
       directionsDisplay.addListener('directions_changed', function() {
         computeTotalDistance(directionsDisplay.getDirections());
       });
 
       displayRoute(start, end, directionsService,
         directionsDisplay, mode);
+
     }
 
       function displayRoute(origin, destination, service, display, mode) {
@@ -428,6 +458,7 @@ App.register = function(e){
 
                   App.journeysNew = function(e){
                     if (e)  e.preventDefault();
+
                     console.log('journeysNew');
 
                     // const url = `${this.apiUrl}/journeys/new`;
@@ -469,5 +500,35 @@ App.register = function(e){
                     //   //       planZip.value = place.address_components[6].long_name;
                     //   //   });
                     // }
+
+
+
+                    function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+                      infoWindow.setPosition(pos);
+                      infoWindow.setContent(browserHasGeolocation ?
+                                            'Error: The Geolocation service failed.' :
+                                            'Error: Your browser doesn\'t support geolocation.');
+                    }
+                    function callback(results, status) {
+                      if (status === google.maps.places.PlacesServiceStatus.OK) {
+                        for (var i = 0; i < results.length; i++) {
+                          createMarker(results[i]);
+                        }
+                      }
+                    }
+
+                    function createMarker(place) {
+                      var placeLoc = place.geometry.location;
+                      var marker = new google.maps.Marker({
+                        map: map,
+                        position: place.geometry.location
+                      });
+
+                      google.maps.event.addListener(marker, 'click', function() {
+                        infowindow.setContent(place.name);
+                        infowindow.setContent(place.name);
+                        infowindow.open(map, this);
+                      });
+                    }
 
 $(App.init.bind(App));
