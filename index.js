@@ -45,7 +45,8 @@ function jwtErrorHandler(err, req, res, next){
 app.use('/api',apiRouter);
 app.use('/', webRouter);
 
-const server= app.listen(config.port, () => console.log(`Express started on port: ${config.port}`));
+//const server=
+app.listen(config.port, () => console.log(`Express started on port: ${config.port}`));
 
 // const ios = io.listen(server, console.log('Listening with socket.io'));
 // ios.sockets.on('connection', function (err,socket) {
